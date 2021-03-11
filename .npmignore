@@ -6,7 +6,12 @@ ngsi-proxy/
 notifications/
 responses/
 tests/
+coverage/
 .*
+*.html
 *.tgz
 Gruntfile.js
+jasmine.json
 tests.js
+examples
+bower.json
