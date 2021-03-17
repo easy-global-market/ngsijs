@@ -7929,12 +7929,12 @@
             options.timerel = "before";
         }
 
-        if (options.timeAt == null) {
-            options.timeAt = new Date();
+        if (options.time == null) {
+            options.time = new Date();
         }
 
-        if (options.timerel === "between" && options.endTimeAt == null) {
-            throw new TypeError("endTimeAt option is required if timerel is equal to \"between\"");
+        if (options.timerel === "between" && options.endTime == null) {
+            throw new TypeError("endTime option is required if timerel is equal to \"between\"");
         }
 
         const connection = privates.get(this);
@@ -7950,15 +7950,15 @@
         }
 
         parameters.attrs = Array.isArray(options.attrs) ? options.attrs.join(',') : options.attrs;
-        parameters.endTimeAt = options.endTimeAt != null ? (
-            typeof(options.endTimeAt.toISOString) === "function" ? options.endTimeAt.toISOString() : options.endTimeAt
+        parameters.endTime = options.endTime != null ? (
+            typeof(options.endTime.toISOString) === "function" ? options.endTime.toISOString() : options.endTime
         ) : undefined;
         parameters.csf = options.csf;
         parameters.id = options.id;
         parameters.idPattern = options.idPattern;
         parameters.lastN = options.lastN;
         parameters.q = options.q;
-        parameters.timeAt = typeof(options.timeAt.toISOString) === "function" ? options.timeAt.toISOString() : options.timeAt;
+        parameters.time = typeof(options.time.toISOString) === "function" ? options.time.toISOString() : options.time;
         parameters.timerel = options.timerel;
         parameters.timeproperty = options.timeproperty;
         parameters.type = options.type;
